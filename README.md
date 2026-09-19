@@ -144,7 +144,5 @@ curl http://$(minikube ip):<nodePort>/healthz; echo
 ---
 
 ## Notes
-
-- All images are CPU-only; no GPU is required anywhere in this assignment.
-- `model.joblib` is trained once in `app/` and copied into each question's folder as needed, so every question runs against the same trained pipeline.
+- `model.joblib` is trained once in `app/` and copied into each question's folder as needed so every question runs against the same trained pipeline.
 - Evidence (screenshots, terminal logs) referenced in the write-up is in `Q4/evidence/`.
