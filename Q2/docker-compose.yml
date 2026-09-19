@@ -1,0 +1,21 @@
+services:
+  cache:
+    image: redis:7-alpine
+    # No ports published to the host on purpose — only the api service
+    # needs to reach Redis, and it does so over the internal Compose
+    # network using the service name "cache" as the hostname.
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
+      - CACHE_TTL_SECONDS=3600
+    depends_on:
+      - cache
+    restart: unless-stopped

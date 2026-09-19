@@ -1,0 +1,12 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: spam-api-service
+spec:
+  type: NodePort
+  selector:
+    app: spam-api
+  ports:
+    - port: 8000
+      targetPort: 8000
