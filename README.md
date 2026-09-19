@@ -1,7 +1,6 @@
-# AIOps Module 3 Assignment — Spam Detection API
+# AIOps Module 3 Assignment
 
-This repository contains my implementation for AIOps Module 3: packaging a spam-detection API with Docker (naive vs. multi-stage builds), adding Redis caching with Docker Compose, and deploying it on Kubernetes (an Indexed Job for batch validation, and a Deployment for self-healing / rolling updates).
-
+This repository contains my implementation for AIOps Module 3
 ## Project Structure
 
 ```
@@ -34,12 +33,6 @@ AIOPS_Module3/
     └── service.yaml
 ```
 
-## Prerequisites
-
-- Docker
-- Python 3.11+
-- minikube (multi-node) + kubectl, for Questions 3 and 4
-
 ---
 
 ## Setup (once)
@@ -53,8 +46,6 @@ pip install -r requirements.txt
 python3 generate_data.py   # creates spam_dataset.csv
 python3 train.py           # creates model.joblib
 ```
-
-This trains the TF-IDF + Naive Bayes pipeline used by every question below.
 
 ---
 
